@@ -14,7 +14,7 @@ class _CallsScreenState extends State<CallsScreen>{
   void initState() {
     super.initState();
     dummyDataChat.forEach((e){
-      if(e.senderName!=NamasteHome.myNumber){
+      if(e.senderName!=WhatsappHome.myNumber){
         calls.add(e);
       }
     });

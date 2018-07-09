@@ -8,10 +8,10 @@ import 'Settings_Screen.dart';
 import 'ContactsUsingScreen.dart';
 
 
-class NamasteHome extends StatefulWidget {
+class WhatsappHome extends StatefulWidget {
   static String myNumber = "Pranav Kapoor";
   @override
-  _NamasteHomeState createState()=> new _NamasteHomeState();
+  _WhatsappHomeState createState()=> new _WhatsappHomeState();
 
   static Future<bool> exitApp(BuildContext context) {
     return showDialog(
@@ -35,7 +35,7 @@ class NamasteHome extends StatefulWidget {
   }
 }
 
-class _NamasteHomeState extends State<NamasteHome> with TickerProviderStateMixin{
+class _WhatsappHomeState extends State<WhatsappHome> with TickerProviderStateMixin{
   ScrollController _scrollViewController;
   Animation<double> _iconAnimation;
   AnimationController _iconAnimationController;
@@ -186,7 +186,7 @@ class _NamasteHomeState extends State<NamasteHome> with TickerProviderStateMixin
           Icons.message,
           color: Colors.white,
         ),
-        onPressed: () => Navigator.of(context).push(new MaterialPageRoute(builder: (context)=> new ContactsUsingScreen(NamasteHome.myNumber))),
+        onPressed: () => Navigator.of(context).push(new MaterialPageRoute(builder: (context)=> new ContactsUsingScreen(WhatsappHome.myNumber))),
       );
     }else if(tabCount==2){
       return new FloatingActionButton(
@@ -195,7 +195,7 @@ class _NamasteHomeState extends State<NamasteHome> with TickerProviderStateMixin
           Icons.photo,
           color: Colors.white,
         ),
-        onPressed: () => Navigator.of(context).push(new MaterialPageRoute(builder: (context)=> new ContactsUsingScreen(NamasteHome.myNumber))),
+        onPressed: () => Navigator.of(context).push(new MaterialPageRoute(builder: (context)=> new ContactsUsingScreen(WhatsappHome.myNumber))),
       );
     }else if(tabCount==3){
       return new FloatingActionButton(
@@ -204,7 +204,7 @@ class _NamasteHomeState extends State<NamasteHome> with TickerProviderStateMixin
           Icons.call,
           color: Colors.white,
         ),
-        onPressed: () => Navigator.of(context).push(new MaterialPageRoute(builder: (context)=> new ContactsUsingScreen(NamasteHome.myNumber))),
+        onPressed: () => Navigator.of(context).push(new MaterialPageRoute(builder: (context)=> new ContactsUsingScreen(WhatsappHome.myNumber))),
       );
     }else{
       return null;

@@ -13,7 +13,7 @@ class ChatScreen extends StatefulWidget {
 
 class _ChatScreenState extends State<ChatScreen> {
   bool hasLoaded = true;
-  String _myNumber = NamasteHome.myNumber;
+  String _myNumber = WhatsappHome.myNumber;
   List _chatters = new List();
   Map<String,String> userMap =  new Map();
   List<Map<String,dynamic>> _chat = new List();

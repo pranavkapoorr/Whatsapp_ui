@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       debugShowMaterialGrid: false,
-      home: new NamasteHome(),
+      home: new WhatsappHome(),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp_ui/views/WhatsappHome.dart';
 import '../models/chat_model.dart';
 class StatusScreen extends StatefulWidget {
 
@@ -16,6 +17,9 @@ class _StatusScreenState extends State<StatusScreen>{
       statuses.add(e);
     });
     statuses.sort((a,b)=>a.time.compareTo(b.time));
+    DataModel myStatus = statuses[statuses.indexWhere((e)=>e.senderName==WhatsappHome.myNumber)];
+    statuses.remove(myStatus);
+    statuses.insert(0, myStatus);
   }
   @override
   Widget build(BuildContext context) {

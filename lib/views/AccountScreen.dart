@@ -39,7 +39,7 @@ class _AccountScreenState extends State<AccountScreen>{
     );
   }
   Future _rootPage(){
-    return Navigator.of(context).push(new MaterialPageRoute(builder: (context)=> new NamasteHome()));
+    return Navigator.of(context).push(new MaterialPageRoute(builder: (context)=> new WhatsappHome()));
   }
 }
 
