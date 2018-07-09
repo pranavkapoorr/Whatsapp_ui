@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'AccountScreen.dart';
-import 'Contacts.dart';
 import 'NotificationScreen.dart';
 import 'dart:async';
 
@@ -36,7 +35,7 @@ class _SettingsScreenState extends State<SettingsScreen>{
                 new Divider(height: 1.0,color: Colors.black,),
                 new ListTile(title: new Text("Account"),leading: new Icon(Icons.vpn_key,color:Colors.black),onTap: _accountPage,),
                 new ListTile(title: new Text("Notifications"),leading: new Icon(Icons.notifications,color:Colors.black),onTap: _notificationsPage,),
-                new ListTile(title: new Text("Help"),leading: new Icon(Icons.help,color:Colors.black),onTap: _testDbPage,)
+                new ListTile(title: new Text("Help"),leading: new Icon(Icons.help,color:Colors.black),onTap:(){})
 
               ],
             ) ]),
@@ -49,9 +48,7 @@ class _SettingsScreenState extends State<SettingsScreen>{
   Future _notificationsPage(){
     return Navigator.of(context).push(new MaterialPageRoute(builder: (context)=> new NotificationScreen()));
   }
-  Future _testDbPage(){
-    return Navigator.of(context).push(new MaterialPageRoute(builder: (context)=> new ContactsDemo()));
-  }
+
 
 }
 
