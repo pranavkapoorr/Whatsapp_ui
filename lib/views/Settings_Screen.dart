@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:whatsapp_ui/models/chat_model.dart';
-import 'package:whatsapp_ui/views/WhatsappHome.dart';
+import '../models/chat_model.dart';
+import 'WhatsappHome.dart';
 import 'AccountScreen.dart';
 import 'NotificationScreen.dart';
 import 'dart:async';

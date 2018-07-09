@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:whatsapp_ui/models/chat_model.dart';
+import '../models/chat_model.dart';
 import 'ChatThreadScreen.dart';
 //import 'package:contacts_service/contacts_service.dart';
 

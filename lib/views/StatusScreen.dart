@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:whatsapp_ui/views/WhatsappHome.dart';
+import 'WhatsappHome.dart';
 import '../models/chat_model.dart';
 class StatusScreen extends StatefulWidget {
 

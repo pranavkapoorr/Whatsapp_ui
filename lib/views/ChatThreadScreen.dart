@@ -1,7 +1,6 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
-import 'package:whatsapp_ui/models/chat_model.dart';
+import '../models/chat_model.dart';
 
 
 var myNum;
