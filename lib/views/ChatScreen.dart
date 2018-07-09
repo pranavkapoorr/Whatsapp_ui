@@ -29,6 +29,7 @@ class _ChatScreenState extends State<ChatScreen> {
         userMap[e.senderName] = e.avatarUrl;
       }
     });
+    _chatters.sort((a,b)=>_lastMessage[a].keys.toList()[0].compareTo(_lastMessage[b].keys.toList()[0]));
   }
 
 

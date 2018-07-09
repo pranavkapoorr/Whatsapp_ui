@@ -25,7 +25,7 @@ List<DataModel> dummyDataChat = [
   new DataModel(
       senderName: "Sahil Shankra",
       message: "Wassup !",
-      time: "5:00",
+      time: "05:00",
       avatarUrl:
       "https://scontent-lht6-1.xx.fbcdn.net/v/t1.0-9/34138868_1779803158724975_3822876881804328960_n.jpg?_nc_cat=0&oh=e102efd0922669816898a22056821d1a&oe=5BDB0F78",
       receiverName: "Pranav Kapoor"),
