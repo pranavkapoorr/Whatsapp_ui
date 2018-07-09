@@ -46,19 +46,18 @@ class _ChatThreadScreenState extends State<ChatThreadScreen> {
           children: <Widget>[
             new IconButton(icon: new CircleAvatar(
               backgroundImage: new NetworkImage('${widget.chatThread.image}'),
-              radius: 15.0,), onPressed: null,),
+              radius: 15.0,), onPressed: (){},),
             new Padding(padding: new EdgeInsetsDirectional.only(end: 10.0)),
             new GestureDetector(
-              child: new Text('${widget.chatThread.name}',
-                  style: new TextStyle(color: new Color(0xffA1A9A9))),
-              onTap: null,
+              child: new Text('${widget.chatThread.name}'),
+              onTap: (){},
             ),
           ],
         ),
         centerTitle: true,
         actions: <Widget>[
-          new IconButton(icon: new Icon(Icons.phone), onPressed: null),
-          new IconButton(icon: new Icon(Icons.more_vert), onPressed: null)
+          new IconButton(icon: new Icon(Icons.phone), onPressed: (){}),
+          new IconButton(icon: new Icon(Icons.more_vert), onPressed: (){})
         ],
         elevation: 4.0,
       ),
@@ -66,11 +65,11 @@ class _ChatThreadScreenState extends State<ChatThreadScreen> {
           child: new Column(
             children: <Widget>[
               new Flexible(
-                child: new ListView.builder(                            //new
-                  padding: new EdgeInsets.all(8.0),                     //new
-                  reverse: true,                                        //new
-                  itemBuilder: (_, int index) => messages[index],      //new
-                  itemCount: messages.length,                          //new
+                child: new ListView.builder(
+                  padding: new EdgeInsets.all(8.0),
+                  reverse: true,
+                  itemBuilder: (_, int index) => messages[index],
+                  itemCount: messages.length,
                 ),
               ),
               new Divider(height: 1.0),
@@ -104,8 +103,8 @@ class _ChatThreadScreenState extends State<ChatThreadScreen> {
                 new Container(
                   margin: new EdgeInsets.symmetric(horizontal: 4.0),
                   child: new IconButton(
-                      icon: new Icon(Icons.photo_camera),
-                      onPressed: null),
+                      icon: new Icon(Icons.photo_camera,color: Colors.grey,),
+                      onPressed: (){}),
                 ),
                 new Flexible(
                   child: new TextField(
@@ -145,7 +144,6 @@ class _ChatThreadScreenState extends State<ChatThreadScreen> {
     String mins = time.minute.toString();
     String timeX =  hrs + ":" + mins ;
     setState(() {
-      print("sending message $message from ${widget.myNumber}");
       messages.insert(0,new ChatMessageBubble(sender: widget.myNumber,message: message,time: timeX,));
     });
     _textController.clear();
