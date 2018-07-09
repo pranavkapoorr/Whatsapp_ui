@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp_ui/views/WhatsappHome.dart';
 import '../models/chat_model.dart';
 class CallsScreen extends StatefulWidget {
 
@@ -7,22 +8,33 @@ class CallsScreen extends StatefulWidget {
 
 }
 class _CallsScreenState extends State<CallsScreen>{
-  String _defaultImage = "https://i.pinimg.com/736x/34/77/c3/3477c3b54457ef50c2e03bdaa7b3fdc5.jpg";
+  List<DataModel> calls = new List();
+
+  @override
+  void initState() {
+    super.initState();
+    dummyDataChat.forEach((e){
+      if(e.senderName!=NamasteHome.myNumber){
+        calls.add(e);
+      }
+    });
+    calls.sort((a,b)=>a.time.compareTo(b.time));
+  }
   @override
   Widget build(BuildContext context) {
     return new ListView.builder(
-        itemCount: dummyDataChat.length,
+        itemCount: calls.length,
         itemBuilder:(context, index) => new Column(children: <Widget>[
           new Divider(height: 10.0),
           new ListTile(
             leading: new CircleAvatar(backgroundColor: Colors.grey,foregroundColor: Colors.transparent,
-                backgroundImage: new NetworkImage(_defaultImage) ,radius: 25.0),
+                backgroundImage: new NetworkImage(calls[index].avatarUrl) ,radius: 25.0),
             title: new Row(
                 mainAxisAlignment:MainAxisAlignment.spaceBetween ,
                 children: <Widget>[
-                  new Text(dummyDataChat[index].senderName,style: new TextStyle(fontWeight: FontWeight.bold),)]
+                  new Text(calls[index].senderName,style: new TextStyle(fontWeight: FontWeight.bold),)]
             ),
-            subtitle: new Text(dummyDataChat[index].time,style: new TextStyle(color: Colors.grey, fontSize: 14.0)),
+            subtitle: new Text(calls[index].time,style: new TextStyle(color: Colors.grey, fontSize: 14.0)),
             trailing: new Icon(Icons.phone),
           )
 
@@ -30,5 +42,9 @@ class _CallsScreenState extends State<CallsScreen>{
         ],),
       );
   }
-
+@override
+  void dispose() {
+    calls.clear();
+    super.dispose();
+  }
 }
