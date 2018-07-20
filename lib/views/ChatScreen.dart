@@ -50,22 +50,22 @@ class _ChatScreenState extends State<ChatScreen> {
 
 
   Widget chats(){
-    //_chatters = _chatters.toSet().toList();
-   // _chatters.sort((a,b)=>_lastMessage[b].keys.toList()[0].compareTo(_lastMessage[a].keys.toList()[0]));
-    return ListView.builder(
+   return ListView.builder(
       itemCount: _chatters.length,
       itemBuilder: (context, i) =>
       new Column(
         children: <Widget>[
-          new Divider(
-            height: 10.0,
-          ),
+          i!=0?new Divider(
+            indent: 85.0,
+            height: 0.0,
+          ):new Container(width: 0.0,height: 0.0,),
           new ListTile(
             leading: new CircleAvatar(
               foregroundColor: Theme
                   .of(context)
                   .primaryColor,
               backgroundColor: Colors.grey,
+              maxRadius: 27.0,
               backgroundImage: new NetworkImage(
                   userMap[_chatters[i]]==null?"https://i.pinimg.com/736x/34/77/c3/3477c3b54457ef50c2e03bdaa7b3fdc5.jpg":userMap[_chatters[i]]),
             ),

@@ -27,15 +27,18 @@ class _StatusScreenState extends State<StatusScreen>{
           itemCount: statuses.length,
           itemBuilder: (context,index) => new Column(
             children: <Widget>[
-              new Divider(height: 10.0),
+              index!=0?new Divider(
+                indent: 85.0,
+                height: 0.0,
+              ):new Container(width: 0.0,height: 0.0,),
               new ListTile(
-                leading: new CircleAvatar(backgroundImage:new NetworkImage(statuses[index].avatarUrl),backgroundColor: Colors.grey,radius: 25.0,),
+                leading: new CircleAvatar(child:index==0?Stack(children:[Align(alignment: Alignment(1.0, 1.3),child:Icon(Icons.add_circle,color: Colors.green.shade600,))]):null,backgroundImage:new NetworkImage(statuses[index].avatarUrl),backgroundColor: Colors.white,maxRadius: index!=0?25.0:30.0,),
                 title: new Row(
                     mainAxisAlignment:MainAxisAlignment.spaceBetween ,
                     children: <Widget>[
-                      new Text(statuses[index].senderName,style: new TextStyle(fontWeight: FontWeight.bold),)]
+                      new Text(index!=0?statuses[index].senderName:"My Status",style: new TextStyle(fontWeight: FontWeight.bold),)]
                 ),
-                subtitle: new Text(statuses[index].time,style: new TextStyle(color: Colors.grey, fontSize: 14.0)),
+                subtitle: new Text(index!=0?statuses[index].time:"tap to add status",style: new TextStyle(color: Colors.grey, fontSize: 14.0)),
               )
 
             ],

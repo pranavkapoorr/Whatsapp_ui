@@ -25,7 +25,10 @@ class _CallsScreenState extends State<CallsScreen>{
     return new ListView.builder(
         itemCount: calls.length,
         itemBuilder:(context, index) => new Column(children: <Widget>[
-          new Divider(height: 10.0),
+          index!=0?new Divider(
+            indent: 85.0,
+            height: 0.0,
+          ):new Container(width: 0.0,height: 0.0,),
           new ListTile(
             leading: new CircleAvatar(backgroundColor: Colors.grey,foregroundColor: Colors.transparent,
                 backgroundImage: new NetworkImage(calls[index].avatarUrl) ,radius: 25.0),
